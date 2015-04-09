@@ -1,50 +1,64 @@
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingLeft="@dimen/wide_padding"
-        android:paddingStart="@dimen/wide_padding"
-        android:paddingRight="@dimen/wide_padding"
-        android:paddingEnd="@dimen/wide_padding"
-        >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingLeft="@dimen/wide_padding"
+    android:paddingStart="@dimen/wide_padding"
+    android:paddingRight="@dimen/wide_padding"
+    android:paddingEnd="@dimen/wide_padding">
+
+    <com.shamanland.fonticon.FontIconView
+        android:id="@android:id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="@string/ic_android"
+        android:textSize="64dp"
+        android:textColor="@color/selector_lamp"
+        android:clickable="true"
+        app:autoMirrored="true"
+        app:needMirroring="false"
+        app:overridePressed="true"
+        app:pressedGlowColor="#fe0"
+        app:pressedGlowRadius="6dp"
+        tools:text="a" />
 
     <com.shamanland.fonticon.FontIconTextView
-            android:id="@+id/example_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/question"
-            android:drawablePadding="@dimen/thin_padding"
-            app:iconLeft="@xml/ic_android"
-            app:iconStart="@xml/ic_android"
-            />
+        android:id="@+id/example_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question"
+        android:textColor="@color/selector_lamp"
+        android:drawablePadding="@dimen/thin_padding"
+        app:iconLeft="@xml/ic_android"
+        app:iconStart="@xml/ic_android" />
 
     <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.shamanland.fonticon.FontIconButton
+            android:id="@+id/yes"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_weight="1"
+            android:text="@android:string/yes"
+            android:background="@null"/>
 
-        <com.shamanland.fonticon.FontIconButton
-                android:id="@+id/yes"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@android:string/yes"
-                app:iconLeft="@xml/ic_button_yes"
-                app:iconStart="@xml/ic_button_yes"
-                />
-
-        <com.shamanland.fonticon.FontIconButton
-                android:id="@+id/no"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@android:string/no"
-                app:iconLeft="@xml/ic_button_no"
-                app:iconStart="@xml/ic_button_no"
-                />
+        <com.shamanland.fonticon.FontIconToggleButton
+            android:id="@+id/no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/selector_lamp"
+            android:background="@null"
+            android:text="@android:string/no"
+            app:iconLeft="@xml/ic_button_no"
+            app:iconStart="@xml/ic_button_no" />
     </LinearLayout>
+
 </LinearLayout>

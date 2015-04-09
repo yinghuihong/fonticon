@@ -9,9 +9,9 @@
         <attr name="iconEnd" format="reference"/>
     </declare-styleable>
     <declare-styleable name="FontIconDrawable">
-        <attr name="text" format="string|reference"/>
-        <attr name="textColor" format="color|reference"/>
-        <attr name="textSize" format="dimension|reference"/>
+        <attr name="fontText" format="string|reference"/>
+        <attr name="fontTextColor" format="color|reference"/>
+        <attr name="fontTextSize" format="dimension|reference"/>
         <attr name="autoMirrored" format="boolean|reference"/>
         <attr name="needMirroring" format="boolean|reference"/>
     </declare-styleable>

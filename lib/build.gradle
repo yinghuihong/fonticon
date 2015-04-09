@@ -1,5 +1,43 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
 dependencies {
     // none
 }
 
-apply from: GRADLE_MVN_PUSH
+//apply from: GRADLE_MVN_PUSH
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "21.1.1"
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        versionCode 1
+        versionName '1.0'
+
+        // workaround for https://code.google.com/p/android/issues/detail?id=52962
+        buildConfigField 'boolean', 'SNAPSHOT', isSnapshot().toString()
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://10.12.3.22:8088/nexus/content/repositories/releases") {
+                authentication(userName: "deployment", password: "aspire\$deploy")
+            }
+            pom.project {
+                groupId 'com.shamanland.fonticon'
+                artifactId 'lib'
+                packaging 'aar'
+                version '1.1.0'
+            }
+        }
+    }
+}

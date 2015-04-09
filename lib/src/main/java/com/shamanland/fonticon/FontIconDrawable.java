@@ -98,17 +98,17 @@ public class FontIconDrawable extends Drawable {
         }
 
         try {
-            mText = a.getString(R.styleable.FontIconDrawable_text);
+            mText = a.getString(R.styleable.FontIconDrawable_fontText);
             if (mText == null) {
                 mText = "";
             }
 
-            mTextColor = a.getColorStateList(R.styleable.FontIconDrawable_textColor);
+            mTextColor = a.getColorStateList(R.styleable.FontIconDrawable_fontTextColor);
             if (mTextColor == null) {
                 mTextColor = ColorStateList.valueOf(0);
             }
 
-            mTextSize = a.getDimension(R.styleable.FontIconDrawable_textSize, 9f);
+            mTextSize = a.getDimension(R.styleable.FontIconDrawable_fontTextSize, 9f);
 
             mAutoMirrored = a.getBoolean(R.styleable.FontIconDrawable_autoMirrored, false);
             mNeedMirroring = a.getBoolean(R.styleable.FontIconDrawable_needMirroring, false);

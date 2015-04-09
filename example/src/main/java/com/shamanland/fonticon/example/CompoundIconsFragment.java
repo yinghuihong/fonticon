@@ -10,8 +10,10 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.shamanland.fonticon.FontIconButton;
 import com.shamanland.fonticon.FontIconDrawable;
 import com.shamanland.fonticon.FontIconTextView;
+import com.shamanland.fonticon.FontIconToggleButton;
 
 public class CompoundIconsFragment extends ContentFragment {
     private static final int[] sIcons = {R.string.ic_android, R.string.ic_camera, R.string.ic_compound};
@@ -72,8 +74,28 @@ public class CompoundIconsFragment extends ContentFragment {
                 // tv.setCompoundDrawables(drawables[0], drawables[1], drawables[2], drawables[3]);
             }
         });
-
+        test(result);
         return result;
+    }
+
+    void test(View view) {
+        final FontIconButton button = (FontIconButton) view.findViewById(R.id.yes);
+        FontIconDrawable drawable = FontIconDrawable.inflate(getContext(), R.xml.ic_button_no);
+        drawable.setText(getString(R.string.ic_github));
+        drawable.setTextColorStateList(StateListUtil.createColorStateList(0xff00cfff, 0xffffcf00, 0xffffcf00, 0xff00cfff));
+        button.setText("ddd");
+        button.setTextColor(StateListUtil.createColorStateList(0xff00cfff, 0xffffcf00, 0xffffcf00, 0xff00cfff));
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            button.setCompoundDrawables(null, drawable, null, null);
+        } else {
+            button.setCompoundDrawablesRelative(null, drawable, null, null);
+        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button.setSelected(!button.isSelected());
+            }
+        });
     }
 
     @Override

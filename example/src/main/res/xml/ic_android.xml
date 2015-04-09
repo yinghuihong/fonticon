@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<font-icon
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:text="@string/ic_android"
-        app:textSize="@dimen/big_icon_size"
-        app:textColor="@color/green_170"
-        app:autoMirrored="true"
-        app:needMirroring="@bool/layout_direction_rtl"
-        />
+<font-icon xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:fontText="@string/ic_android"
+    app:fontTextSize="@dimen/big_icon_size"
+    app:fontTextColor="@color/selector_lamp"
+    app:autoMirrored="true"
+    app:needMirroring="@bool/layout_direction_rtl" />
